@@ -6,8 +6,8 @@ const input = fs.readFileSync(path.join(__dirname, "input.txt")).toString();
 const hasUniqueChars = (string) => {
   const chars = {};
   for (const char of string) {
-    if (!chars[char]) chars[char] = true;
-    else return false;
+    if (chars[char]) return false;
+    chars[char] = true;
   }
   return true;
 };
